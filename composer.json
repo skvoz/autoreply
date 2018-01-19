@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Lib\\": "class\\",
+      "App\\": "app\\"
+    }
+  },
+  "require": {
+    "symfony/console": "^3.4",
+    "phpmailer/phpmailer": "^6.0"
+  }
+}
