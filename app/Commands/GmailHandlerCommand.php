@@ -1,6 +1,7 @@
 <?php
 namespace App\Commands;
 
+use Lib\Configuration;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -24,7 +25,9 @@ class GmailHandlerCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-
+        $config = new Configuration();
+        $config->getConfigTreeBuilder();
+        die;
 
         /* connect to gmail */
         $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
