@@ -1,37 +1,22 @@
 <?php
-namespace App\Commands;
-
-use Lib\Configuration;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputInterface;
+namespace App\Autoreply\Commands;
+use Src\Configuration;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class GmailHandlerCommand extends Command
+class TestCommand
 {
     private $configuration;
 
-    protected function configure()
+    public function __construct(Configuration $configuration)
     {
-        $this
-            // the name of the command (the part after "bin/console")
-            ->setName('fetcher:google')
-
-            // the short description shown while running "php bin/console list"
-            ->setDescription('Fetch data from gmail account')
-
-            // the full command description shown when running the command with
-            // the "--help" option
-            ->setHelp('This command allows you to create a user...')
-        ;
+        $this->configuration = $configuration;
     }
-
-    protected function execute(InputInterface $input, OutputInterface $output)
+    public function __invoke($id, OutputInterface $output)
     {
-
         /* connect to gmail */
         $hostname = '{imap.gmail.com:993/imap/ssl}INBOX';
         $username = 'skvoz.ne@gmail.com';
-        $password = '';
+        $password = $this->configuration->toArray('password');
 
         /* try to connect */
         $inbox = imap_open($hostname,$username,$password) or die('Cannot connect to Gmail: ' . imap_last_error());

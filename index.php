@@ -1,15 +1,23 @@
 <?php
-
-require __DIR__.'/vendor/autoload.php';
-
-use App\Commands\GmailHandlerCommand;
-use Symfony\Component\Console\Application;
-
-$application = new Application();
-
-// ... register commands
-
-$application->add(new GmailHandlerCommand());
-
-$application->run();
-
+phpinfo();
+//use DI\ContainerBuilder;
+//use App\Commands\GmailHandlerCommand;
+//use Symfony\Component\Console\Application;
+//
+//require __DIR__.'/vendor/autoload.php';
+//
+//$containerBuilder = new ContainerBuilder;
+//$containerBuilder->addDefinitions(__DIR__ . '/config/di.php');
+//$container = $containerBuilder->build();
+//
+//
+//
+//
+//$application = new Application();
+//
+//// ... register commands
+//
+////$application->add(new GmailHandlerCommand());
+//
+//$application->run();
+//
