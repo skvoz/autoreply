@@ -20,5 +20,5 @@ $app->useContainer($container, $injectWithTypeHint = true);
 // Show an article
 // For this command we provide an invokable class instead of a closure
 // That allows to use dependency injection in the constructor
-$app->command('article [id]', \App\Autoreply\Commands\TestCommand::class);
+$app->command('article [id]', \App\Autoreply\Commands\FetchMailCommand::class);
 $app->run();
