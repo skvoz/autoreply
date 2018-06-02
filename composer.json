@@ -9,6 +9,7 @@
   "require": {
     "php-di/php-di": "^5.4",
     "mnapoli/silly": "*",
-    "phpmailer/phpmailer": "^6.0"
+    "phpmailer/phpmailer": "^6.0",
+    "google/apiclient": "^2.0"
   }
 }
